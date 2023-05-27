@@ -1,0 +1,35 @@
+name: .NET Framework
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      name: Checkout Code
+     
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+       
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+     
+    - name: Restore NuGet Packages
+      run: nuget restore SimpleFrameworkApp.sln
+ 
+    - name: Build App
+      run: msbuild Web2Pdf.sln /p:Configuration=Release
+ 
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: assets
+        path: bin\Release\
