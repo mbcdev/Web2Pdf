@@ -1,8 +1,8 @@
 # Web2Pdf
-A Windows command-line utility to save websites as PDF.
+A Windows command-line utility to save websites as a PDF file.
 
 ## Description
-The utility renders a given website by using the [Chromium Embedded Framework][CEF] (CEF) and prints the web content to a PDF file.  
+This utility renders a given website by using the [Chromium Embedded Framework][CEF] (CEF) and prints the web content to a PDF file.  
 Optionally, a timestamp prefix can be added to the output file name which e.g. makes it easier to store multiple versions of a website.
 
 **Why not using Microsoft Edge/WebView2?**  
