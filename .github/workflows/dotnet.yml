@@ -23,7 +23,7 @@ jobs:
       uses: NuGet/setup-nuget@v1
      
     - name: Restore NuGet Packages
-      run: nuget restore SimpleFrameworkApp.sln
+      run: nuget restore Web2Pdf.sln
  
     - name: Build App
       run: msbuild Web2Pdf.sln /p:Configuration=Release
